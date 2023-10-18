@@ -12,7 +12,15 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(cors());
+app.use(cors( I
+    ,{
+    origin: ["https://car-service-iinm.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true,
+    }
 
+));
+// routes
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
